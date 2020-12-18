@@ -1,0 +1,22 @@
+import re
+#open file & read contents
+f = open("./population_large_from_hadoop.txt")    
+p = f.readlines()
+#Convert to string
+line= str(p)
+
+#Find all keys
+regex = re.compile(r"\d+\s")
+keys = [] 
+for x in regex.findall(line):
+    keys.append(x)
+    the_sec = []
+
+for x in range(len(keys)):
+    pop = int(keys[x])
+    the_sec.append(pop)
+    
+sa = set(the_sec)
+
+for x in sa:
+    print(x)  
